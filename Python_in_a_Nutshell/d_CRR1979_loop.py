@@ -12,6 +12,13 @@ from c_parameters import *
 # Inputs are pulled in from c_parameters.py
 # Will use K from c_parameters.py when using BSM_call_value(S0, K, T, r, vola), even though K is specified in BSM_valuation.py
 
+# This method uses a nested loop in a manner similar to C++, utilizing the command np.zeros(i,j),dtype=np.float)
+# which initializes a Numpy Array i x j where each number is of the double float variety
+
+# Matrix S shows the evolution of stock price S
+# Matrix V shows the evolution of inner value max(St-K,0) given matrix S
+# Matrix pv given the pv based on V
+
 print("***Input parameter check***")
 print("S0 is " , S0) 
 print("K is ", K)
