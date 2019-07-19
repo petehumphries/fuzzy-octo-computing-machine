@@ -16,7 +16,7 @@ from c_parameters import *
 # which initializes a Numpy Array i x j where each number is of the double float variety
 
 # Matrix S shows the evolution of stock price S
-# Matrix V shows the evolution of inner value max(St-K,0) given matrix S
+# Matrix iv shows the evolution of inner value max(St-K,0) given matrix S
 # Matrix pv given the pv based on V
 
 print("***Input parameter check***")
