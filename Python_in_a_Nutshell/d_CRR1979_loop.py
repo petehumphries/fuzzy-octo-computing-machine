@@ -9,6 +9,9 @@ import numpy as np
 from c_parameters import *
 
 # Easier to change input variables using notepad++ rather than using Jupyter
+# Inputs are pulled in from c_parameters.py
+# Will use K from c_parameters.py when using BSM_call_value(S0, K, T, r, vola), even though K is specified in BSM_valuation.py
+
 print("***Input parameter check***")
 print("S0 is " , S0) 
 print("K is ", K)
@@ -21,10 +24,6 @@ print("vola is ", vola) # constant volatility factor of diffusion
 import os
 print(os.path.abspath("c_parameters"))
 print(os.path.abspath("d_CRR1979_loop"))
-
-
-# In[9]:
-
 
 
 # Valuation of European Call Option in CRR1979 Model
