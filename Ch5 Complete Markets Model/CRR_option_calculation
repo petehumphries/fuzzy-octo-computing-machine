@@ -91,3 +91,13 @@ def plot_convergence(mmin, mmax, step_size):
     plt.ylabel('European call option value')
     plt.legend(loc=4)
     plt.xlim(0, mmax)
+
+# to run valuations and plots
+
+otype = 'call'
+CRR_option_value(S0, K, T, r, sigma, otype, M=4)
+
+# to plot convergence graph
+# 3rd input is number of timesteps => M=20 gives a smooth convergence, but M = 25 oscillates 
+
+lot_convergence(1,1000, 20)
