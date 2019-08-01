@@ -1,0 +1,67 @@
+# Based on code from DAWP
+#
+# Plotting European Option Values
+# C:\Users\User1\PythonQuants\BSM_option_valuation
+
+def plot_values(function):
+    ''' Plots European option values for different parameters c.p. '''
+    plt.figure(figsize=(10, 8.3))
+    points = 100
+    #
+    # Model Parameters
+    #
+    St = 100.0  # index level
+    K = 100.0  # option strike
+    t = 0.0  # valuation date
+    T = 1.0  # maturity date
+    r = 0.05  # risk-less short rate
+    sigma = 0.2  # volatility
+
+    # C(K) plot
+    plt.subplot(221)
+    klist = np.linspace(80, 120, points)
+    vlist = [function(St, K, t, T, r, sigma) for K in klist]
+    plt.plot(klist, vlist)
+    plt.grid()
+    plt.xlabel('strike $K$')
+    plt.ylabel('present value')
+
+    # C(T) plot
+    plt.subplot(222)
+    tlist = np.linspace(0.0001, 1, points)
+    vlist = [function(St, K, t, T, r, sigma) for T in tlist]
+    plt.plot(tlist, vlist)
+    plt.grid(True)
+    plt.xlabel('maturity $T$')
+
+    # C(r) plot
+    plt.subplot(223)
+    rlist = np.linspace(0, 0.1, points)
+    vlist = [function(St, K, t, T, r, sigma) for r in rlist]
+    plt.plot(tlist, vlist)
+    plt.grid(True)
+    plt.xlabel('short rate $r$')
+    plt.ylabel('present value')
+    plt.axis('tight')
+
+    # C(sigma) plot
+    plt.subplot(224)
+    slist = np.linspace(0.01, 0.5, points)
+    vlist = [function(St, K, t, T, r, sigma) for sigma in slist]
+    plt.plot(slist, vlist)
+    plt.grid(True)
+    plt.xlabel('volatility $\sigma$')
+    plt.tight_layout()
+
+############VALUATION#########
+
+St = 100.0  # index level
+K = 100.0  # option strike
+t = 0.0  # valuation date
+T = 1.0  # maturity date
+r = 0.05  # risk-less short rate
+sigma = 0.2  # volatility
+
+BSM_put_value(St, K, t, T, r, sigma)
+
+BSM_call_value(St, K, t, T, r, sigma)
