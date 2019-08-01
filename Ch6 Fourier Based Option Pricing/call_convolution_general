@@ -39,8 +39,5 @@ print("Value of the Call Option %8.3f" % V[0, 0])
 
 ###generates the following results and paths of modules used on first run:
 
-# C:\Users\User1\PythonQuants\convolution
 # C:\Users\User1\PythonQuants\parameters.py
-# Value of European option is   11.044
-# Value of European option is   11.044
-# Value of European option is   11.044C
+# Value of the Call Option   11.044
